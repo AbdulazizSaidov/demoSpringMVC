@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CV" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d96547f-833b-43b0-a132-21f5f99d3ac4">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<parameter name="ID" class="java.math.BigDecimal"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM public.user WHERE id = $P{ID}]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+	</field>
+	<field name="last_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="last_name"/>
+	</field>
+	<field name="middle_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="middle_name"/>
+	</field>
+	<field name="nationality" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nationality"/>
+	</field>
+	<field name="date_of_birth" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="date_of_birth"/>
+	</field>
+	<field name="study" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="study"/>
+	</field>
+	<field name="date_of_finish" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="date_of_finish"/>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="phone"/>
+	</field>
+	<field name="education" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="education"/>
+	</field>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<group name="email">
+		<groupExpression><![CDATA[$F{email}]]></groupExpression>
+	</group>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="last_name">
+		<groupExpression><![CDATA[$F{last_name}]]></groupExpression>
+	</group>
+	<group name="middle_name">
+		<groupExpression><![CDATA[$F{middle_name}]]></groupExpression>
+	</group>
+	<group name="nationality">
+		<groupExpression><![CDATA[$F{nationality}]]></groupExpression>
+	</group>
+	<group name="date_of_birth">
+		<groupExpression><![CDATA[$F{date_of_birth}]]></groupExpression>
+	</group>
+	<group name="study">
+		<groupExpression><![CDATA[$F{study}]]></groupExpression>
+	</group>
+	<group name="date_of_finish">
+		<groupExpression><![CDATA[$F{date_of_finish}]]></groupExpression>
+	</group>
+	<group name="phone">
+		<groupExpression><![CDATA[$F{phone}]]></groupExpression>
+	</group>
+	<group name="education">
+		<groupExpression><![CDATA[$F{education}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="590" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="-10" width="555" height="70" uuid="c3bf2134-32f9-406a-913b-f0fb7b4ce50c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="html">
+					<font size="26"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Hodim haqida malumot]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="3" y="80" width="541" height="510" uuid="05ced4e3-1eff-4e45-9962-7e773ab23b10"/>
+				<textField>
+					<reportElement x="16" y="9" width="81" height="31" uuid="8fe2809b-dc56-4191-a59c-2d4cb502e408"/>
+					<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="169" y="9" width="101" height="41" uuid="ec243529-8ba7-4ce7-8e6b-90f759a0eb7d"/>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+</jasperReport>
