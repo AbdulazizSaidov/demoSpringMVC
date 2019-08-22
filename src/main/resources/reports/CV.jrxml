@@ -3,9 +3,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CV" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d96547f-833b-43b0-a132-21f5f99d3ac4">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
-	<parameter name="ID" class="java.math.BigDecimal"/>
+	<parameter name="ID" class="java.lang.Long"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT * FROM public.user WHERE id = $P{ID}]]>
+		<![CDATA[SELECT * FROM public.employees WHERE id = $P{ID}]]>
 	</queryString>
 	<field name="name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="name"/>
@@ -77,26 +77,172 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="590" splitType="Stretch">
+		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement stretchType="RelativeToBandHeight" x="0" y="-10" width="555" height="70" uuid="c3bf2134-32f9-406a-913b-f0fb7b4ce50c"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="html">
-					<font size="26"/>
-					<paragraph lineSpacing="1_1_2"/>
+				<reportElement x="0" y="0" width="550" height="79" uuid="3aaed1f5-6bcc-4dc5-bd1d-28bc07010932"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Hodim haqida malumot]]></text>
+				<text><![CDATA[Xodim haqida ma'lumot]]></text>
 			</staticText>
-			<frame>
-				<reportElement x="3" y="80" width="541" height="510" uuid="05ced4e3-1eff-4e45-9962-7e773ab23b10"/>
-				<textField>
-					<reportElement x="16" y="9" width="81" height="31" uuid="8fe2809b-dc56-4191-a59c-2d4cb502e408"/>
-					<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="169" y="9" width="101" height="41" uuid="ec243529-8ba7-4ce7-8e6b-90f759a0eb7d"/>
-					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
-				</textField>
-			</frame>
 		</band>
 	</title>
+		<detail>
+		<band height="590" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="21" width="181" height="21" uuid="0ef85182-e92c-4f9c-b894-3439492382eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Tartib raqami]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="181" height="21" uuid="e58e5a84-eed5-4b4d-9d15-4ab45232fc42"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Ismi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="100" width="181" height="21" uuid="724414b8-7b86-4784-9091-aa0483bcc6c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Familyasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="181" height="21" uuid="a6512109-0338-4a3d-bc95-c7e823108bbf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Sharifi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="180" width="181" height="21" uuid="c4cfe466-6324-4727-8840-a3f4411c764c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Tug'ilgan yili]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="220" width="181" height="21" uuid="5ee07868-cbf1-425c-b2c6-e09fe51d6d3f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Millati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="260" width="181" height="21" uuid="015138b6-d24f-49d3-9809-aa608fc52eeb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Ma'lumoti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="300" width="181" height="21" uuid="1d6c69cc-3bbd-4ff5-8602-8de68222a57d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[O'qigan joylari]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="340" width="181" height="21" uuid="4312ba92-fa11-4cd7-97ff-b55e0c7abb2f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Tugatgan yili]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="380" width="181" height="21" uuid="f7033eb0-357c-444a-a081-86cf5bb4cc7b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Telefon raqami]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="420" width="181" height="21" uuid="93d8a305-2044-42c5-99e5-379a0761cd50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="21" width="201" height="21" uuid="52360943-db4f-42ed-954d-5d303d34ca0f"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="60" width="201" height="21" uuid="1b61535a-90f7-40fc-a7b5-67fc74d1b108"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="100" width="201" height="21" uuid="b76d4d80-95bc-4776-94e0-f7a4ec7c5b44"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{last_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="140" width="201" height="21" uuid="b5345e03-c24d-4fee-8ecd-ea2a5029716d"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{middle_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="180" width="201" height="21" uuid="72ad2326-4bd4-4245-9226-1b73f21358ab"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date_of_birth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="220" width="201" height="21" uuid="ef14484a-22a8-4496-8973-af43a15d41f1"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nationality}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="260" width="201" height="21" uuid="ecc8b74b-4dba-4d1b-bfd1-0b6feb87b700"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{education}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="300" width="201" height="21" uuid="78b63ebd-7d5b-4903-9db6-550d3c451a76"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{study}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="340" width="201" height="21" uuid="8ee76cb5-eae5-481a-97ed-01f7c9d2bfa1"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date_of_finish}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="380" width="201" height="21" uuid="84224ab9-3a1b-4d8e-a08a-499fc8fdf031"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="420" width="201" height="21" uuid="48aba807-6e93-4f07-a8fe-4cb8c0afeec5"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+		</band></detail>
+
 </jasperReport>

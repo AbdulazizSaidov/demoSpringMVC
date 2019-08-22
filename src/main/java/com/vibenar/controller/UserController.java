@@ -2,6 +2,7 @@ package com.vibenar.controller;
 
 import com.vibenar.entity.Admin;
 import com.vibenar.entity.User;
+import com.vibenar.mail.EmailSubmitService;
 import com.vibenar.mapping.UserMapping;
 import com.vibenar.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,6 +53,7 @@ public class UserController {
 
     @PostMapping("/login")
     public String getLogin(@RequestParam(value = "log") String log, @RequestParam(value = "pass") String pass, Model model){
+
         List<Admin> admins = userService.getAdmins(log, pass);
         if(admins==null || admins.isEmpty()){
             return "error";
@@ -55,6 +61,8 @@ public class UserController {
         model.addAttribute("users", userService.findAll());
         return "usersList";
     }
+
+
 
     @GetMapping("/cv")
     public String getCV(Model model, @RequestParam(value = "id") Integer id){
@@ -89,6 +97,11 @@ public class UserController {
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute("user") User user){
         userService.save(user);
+        try {
+            EmailSubmitService.sendDocflowEmail(user.getEmail(), "TEXT_ADD_COMPANY");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
         return "redirect:/users";
     }
 

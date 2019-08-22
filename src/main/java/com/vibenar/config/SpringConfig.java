@@ -6,6 +6,8 @@ import com.vibenar.dao.UserDao;
 import com.vibenar.dao.UserDaoImpl;
 import com.vibenar.service.UserService;
 import com.vibenar.service.UserServiceImpl;
+import com.vibenar.utils.SetsService;
+import com.vibenar.utils.SetsServiceDao;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -46,4 +48,11 @@ public class SpringConfig {
     public ExportToPdfIn getEx(){
         return new ExportToPdf(getJdbcTemplate());
     }
+
+    @Bean
+    public SetsServiceDao getSets(){
+        return new SetsService(getJdbcTemplate());
+    }
+
+
 }

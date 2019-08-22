@@ -60,7 +60,7 @@
     </tr>
     <tr>
         <td>
-            ${user.id}
+        ${user.id}
         </td>
         <td>
         ${user.name}
@@ -72,7 +72,7 @@
         ${user.middleName}
         </td>
         <td>
-        ${user.yearOfBirth}
+        ${user.birth}
         </td>
         <td>
         ${user.nationality}
@@ -81,13 +81,13 @@
         ${user.education}
         </td>
         <td>
-            ${user.placeOfStudy}
+        ${user.placeOfStudy}
         </td>
         <td>
-            ${user.phone}
+        ${user.phone}
         </td>
         <td>
-            ${user.email}
+        ${user.email}
         </td>
     </tr>
     <tr>

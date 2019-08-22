@@ -13,13 +13,13 @@ public class User {
     private String name;
     private String lastName;
     private String middleName;
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
-    private Date yearOfBirth;
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    private Date birth;
     private String nationality;
     private String education;
     private String placeOfStudy;
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
-    private Date yearOfCompletion;
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    private Date compleaton;
     private String phone;
     private String email;
 

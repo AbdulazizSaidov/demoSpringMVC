@@ -22,8 +22,8 @@ public class UserMapping implements RowMapper<User> {
         user.setPlaceOfStudy(resultSet.getString("study"));
         user.setPhone(resultSet.getString("phone"));
         user.setEducation(resultSet.getString("education"));
-        user.setYearOfBirth(resultSet.getDate("date_of_birth"));
-        user.setYearOfCompletion(resultSet.getDate("date_of_finish"));
+        user.setBirth(resultSet.getDate("date_of_birth"));
+        user.setCompleaton(resultSet.getDate("date_of_finish"));
 
         return user;
     }

@@ -68,8 +68,7 @@
 <body>
  <div >
     <form name="user" action="/editUser" method="post">
-        <p>Id</p>
-        <input title="Id" type="text" name="id" value="${user.id}">
+        <input title="Id" type="hidden" name="id" value="${user.id}">
         <p>Ism</p>
         <input  title="Name" type="text" name="name" value="${user.name}">
         <p>Familya</p>
@@ -77,7 +76,7 @@
         <p>Sharif</p>
         <input  title="Middle Name" type="text" name="middleName" value="${user.middleName}">
         <p>Tug'ilgan sana</p>
-        <input  title="Year Of Birth" type="date" name="yearOfBirth" value="${user.yearOfBirth}">
+        <input  title="Year Of Birth" type="date" name="birth" value="${user.birth}">
         <p>Millat</p>
         <input  title="Nationality" type="text" name="nationality" value="${user.nationality}">
         <p>Ma'lumot</p>
@@ -88,7 +87,7 @@
         <p>O'qigan joy</p>
         <input   title="Place Of Study" type="text" name="placeOfStudy" value="${user.placeOfStudy}">
         <p>Tugatgan yil</p>
-        <input title="Year of Completion" type="date" name="yearOfCompletion" value="${user.yearOfCompletion}">
+        <input title="Year of Completion" name="compleaton" type="date" value="${user.compleaton}">
          <p>Telefon raqam</p>
             <input  maxlength="17" type="tel" name="phone" value="${user.phone}">
         <p>Email</p>
